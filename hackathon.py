@@ -26,7 +26,8 @@ def template():
                 score = StringField()
 
             # đẩy lên mongo
-            for post in sorted_post_list[:6]:
+            Restaurant8.drop_collection()
+            for post in sorted_post_list:
                 post_dict = post.__dict__
                 post_dict_mongo = Restaurant8(post_id=str(post_dict['id']),
                                               message=post_dict['message'],
